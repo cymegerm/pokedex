@@ -1,0 +1,8 @@
+{
+  "name": "pokedex",
+  "version": "0.0.0",
+  "repository": "git@github.perso:cymegerm/pokedex.git",
+  "author": "Simon St-Germain <cymegerm@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
