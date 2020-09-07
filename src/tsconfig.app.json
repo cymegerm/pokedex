@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "types": []
+  },
+  "exclude": ["setup-jest.ts", "test-config.helper.ts", "wallabyTest.ts", "**/*.spec.ts"]
+  //  error TS-996002: Appears in the NgModule.imports of AppModule, but could not be resolved to an NgModule class
+  //  Fix in 8.2.0-next.1": https://github.com/angular/angular/issues/30972
+  //  "angularCompilerOptions": {
+  //    "enableIvy": true
+  //  }
+}
