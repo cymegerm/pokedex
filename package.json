@@ -4,15 +4,20 @@
   "repository": "git@github.perso:cymegerm/pokedex.git",
   "author": "Simon St-Germain <cymegerm@gmail.com>",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --configuration=development",
     "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng ../e2e"
+    "test": "tsc -p src/tsconfig.spec.json && jest --coverage",
+    "test:watch": "tsc -p src/tsconfig.spec.json && jest --clearCache && jest --watch",
+    "test-ci": "tsc -p src/tsconfig.spec.json && yarn run prettier-check && jest --runInBand --no-cache",
+    "lint-ts": "ng lint",
+    "lint-scss": "stylelint 'src/**/*.scss' --cache --cache-location './.stylelintcache/'",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "prettier-write": "prettier --write '**/*.{ts,js,css,html}'",
+    "prettier-check": "prettier --check '**/*.{ts,js,css,html}'"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~10.1.0",
     "@angular/common": "~10.1.0",
