@@ -11,12 +11,17 @@
     "build": "ng build",
     "test": "tsc -p src/tsconfig.spec.json && jest --coverage",
     "test:watch": "tsc -p src/tsconfig.spec.json && jest --clearCache && jest --watch",
-    "test-ci": "tsc -p src/tsconfig.spec.json && yarn run prettier-check && jest --runInBand --no-cache",
     "lint-ts": "ng lint",
     "lint-scss": "stylelint 'src/**/*.scss' --cache --cache-location './.stylelintcache/'",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "prettier-write": "prettier --write '**/*.{ts,js,css,html}'",
     "prettier-check": "prettier --check '**/*.{ts,js,css,html}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && yarn lint-ts && yarn lint-scss && yarn test",
+      "pre-push": "ng build --aot true"
+    }
   },
   "dependencies": {
     "@angular/animations": "~10.1.0",
