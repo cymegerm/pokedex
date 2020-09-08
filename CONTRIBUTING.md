@@ -87,7 +87,7 @@ On this project, we integrate the following rules/conventions:
 
 - In the case where an element (or component) is repeated in the same HTML document, for example when a component gets
   repeated a number of times as the result of a loop in a framework template, it is ok to use the same CSS class for each
-  repeated element/component outputted by the loop. But in general, reusing classes accross HTML elements and components
+  repeated element/component outputted by the loop. But in general, reusing classes across HTML elements and components
   should be avoided.
 
 - When an element is the **outermost** element of an HTML _component_ (therefore, the **component element**), there
@@ -155,7 +155,9 @@ On this project, we integrate the following rules/conventions:
   }
   ```
 
-- Use _rem_ units as much as possible for elements that are **not text elements**. For text elements, use _px_ units.
+- Use _rem_ units as much as possible for elements that are **not text elements**. For text elements, use
+ _px_ units.  For elements that should be sized in relation to the viewport dimensions (layout elements, ...), use
+  **viewport** units (_vw_, _vh_, ...) as much as possible.
 
 - Use _mixins_ **with restraint** (only if they are used frequently and/or if they don't make the style sheets harder to
   reason about).
