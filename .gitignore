@@ -33,6 +33,7 @@ speed-measure-plugin*.json
 
 # misc
 /.sass-cache
+/.stylelintcache
 /connect.lock
 /coverage
 /libpeerconnection.log
