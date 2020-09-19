@@ -53,9 +53,9 @@ repeating compute-intensive CSS manipulations across many elements. In this case
 one compute-intensive class on several elements might be a better option in order to maximize performance. An example
 would be an expensive CSS animation class that needs to be applied to a large number of elements in a given view.
 
-The performance hit gets even more negligible when the compiled CSS assets are compressed (for example, using _gzip_) 
-before getting shipped to the frontend agent (web browser, mobile application, ...). File compression algorithms will 
-prevent repeating strings in code from being repeated in the compressed files. Those strings will be handled using 
+The performance hit gets even more negligible when the compiled CSS assets are compressed (for example, using _gzip_)
+before getting shipped to the frontend agent (web browser, mobile application, ...). File compression algorithms will
+prevent repeating strings in code from being repeated in the compressed files. Those strings will be handled using
 indexing and replacement techniques. The resulting minified files will therefore be streamlined and lighter.
 
 In Conclusion, the architecture used in this project has many benefits from the **isolation** principles and very few
@@ -72,7 +72,7 @@ This system borrows and integrates various principles, features and conventions 
 
 In a nutshell, it combines some features from the [**Sass**](https://sass-lang.com/) (Syntactically Awesome Style Sheets) CSS extension language, some
 principles and rules from the [**ECSS**](https://drive.google.com/open?id=1Pzr6685TeBuLAHmgmS3AiSJ6BWOqmPWw) (Enduring
- CSS) methodology and the responsive power of the native CSS Grid and Flexbox modules.
+CSS) methodology and the responsive power of the native CSS Grid and Flexbox modules.
 
 ###### Details
 
@@ -156,7 +156,7 @@ On this project, we integrate the following rules/conventions:
   ```
 
 - Use _rem_ units as much as possible for elements that are **not text elements**. For text elements, use
- _px_ units.  For elements that should be sized in relation to the viewport dimensions (layout elements, ...), use
+  _px_ units. For elements that should be sized in relation to the viewport dimensions (layout elements, ...), use
   **viewport** units (_vw_, _vh_, ...) as much as possible.
 
 - Use _mixins_ **with restraint** (only if they are used frequently and/or if they don't make the style sheets harder to
@@ -277,7 +277,7 @@ To recap, the above examples clearly demonstrate the power of Sass and ECSS when
 and other features of Sass to the mix, the CSS code base becomes highly readable, reusable and maintainable.
 
 As a final example, here is a more complete snippet that represents a full .scss file for a _Header_ component that is
-defined in the _Layout_ module of the project (TODO: Add CSS Grid and Flexbox code that defines the responsive rows, 
+defined in the _Layout_ module of the project (TODO: Add CSS Grid and Flexbox code that defines the responsive rows,
 columns and other layout elements):
 
 `header.component.html`
@@ -291,11 +291,9 @@ columns and other layout elements):
   </div>
 
   <div class="layout-Header_SupportTextWrapper">
-     <span class="layout-Header_SupportText">
-       Need help? Contact
-       <a href="mailto:support@mycompany.com" class="layout-Header_SupportAnchor">
-         support@mycompany.com
-      </a>
+    <span class="layout-Header_SupportText">
+      Need help? Contact
+      <a href="mailto:support@mycompany.com" class="layout-Header_SupportAnchor"> support@mycompany.com </a>
     </span>
   </div>
 </section>

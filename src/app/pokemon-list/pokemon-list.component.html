@@ -1,0 +1,17 @@
+<section class="pokemonlist-PokemonList">
+  <ng-template #loading>Loading...</ng-template>
+  <div class="pokemonlist-PokemonList_ListWrapper" *ngIf="pokemonListRetrieved$ | async; else loading">
+    <ul class="pokemonlist-PokemonList_List" *ngFor="let pokemon of pokemonList$ | async">
+      <li class="pokemonlist-PokemonList_ListItem">
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
+            pokemon.url.slice(34, -1)
+          }}.png"
+          alt="pokemon front image"
+        />
+        <span>{{ pokemon.name }}</span>
+      </li>
+    </ul>
+    <button>More</button>
+  </div>
+</section>
