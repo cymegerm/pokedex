@@ -9,7 +9,6 @@ export const selectPokemonListState = (state) => {
 };
 
 export const pokemonList = createSelector(selectPokemonListState, (pokemonList) => {
-  console.log(pokemonList.data);
   return pokemonList.data;
 });
 
