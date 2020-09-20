@@ -9,13 +9,16 @@ export interface PokemonListState {
 
 export const initialPokemonListState: PokemonListState = {
   retrieved: false,
-  data: undefined,
+  data: null,
 };
 
 export const pokemonListReducer = createReducer(
   initialPokemonListState,
   on(PokemonListActions.pokemonListRequested, (state, action) => {
-    return state;
+    return {
+      ...state,
+      retrieved: false,
+    };
   }),
 
   on(PokemonListActions.pokemonListRetrieved, (state, action) => {
