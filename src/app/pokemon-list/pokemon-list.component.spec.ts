@@ -8,6 +8,7 @@ import { PokemonListComponent } from './pokemon-list.component';
 import { initialPokemonListState } from './state/pokemon-list.reducer';
 import * as pokemonListSelectors from './state/pokemon-list.selectors';
 import * as fakePokemonList from './test/fakePokemonList.json';
+import { SharedModule } from '@app/shared/shared.module';
 
 describe('PokemonListComponent', () => {
   let component: PokemonListComponent;
@@ -18,7 +19,7 @@ describe('PokemonListComponent', () => {
     try {
       await TestBed.configureTestingModule({
         declarations: [PokemonListComponent],
-        imports: [RouterTestingModule],
+        imports: [RouterTestingModule, SharedModule],
         providers: [
           provideMockStore({
             initialState: initialPokemonListState,

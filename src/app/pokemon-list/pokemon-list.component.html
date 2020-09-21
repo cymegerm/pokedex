@@ -1,5 +1,5 @@
 <section class="pokemonlist-PokemonList">
-  <ng-template #loading><div class="pokemonlist-PokemonList_Loader"></div></ng-template>
+  <ng-template #loading><pok-loader></pok-loader></ng-template>
   <div class="pokemonlist-PokemonList_ListWrapper" *ngIf="pokemonListRetrieved$ | async; else loading">
     <ul class="pokemonlist-PokemonList_List" *ngFor="let pokemon of pokemonListItems">
       <li class="pokemonlist-PokemonList_ListItem">
