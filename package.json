@@ -12,6 +12,8 @@
     "build": "ng build",
     "test": "tsc -p src/tsconfig.spec.json && jest --coverage",
     "test:watch": "tsc -p src/tsconfig.spec.json && jest --clearCache && jest --watch",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
     "lint-ts": "ng lint",
     "lint-scss": "stylelint 'src/**/*.scss' --cache --cache-location './.stylelintcache/'",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
