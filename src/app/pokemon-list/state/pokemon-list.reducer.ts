@@ -4,12 +4,20 @@ import { PokemonListActions } from './pokemon-list.action-types';
 
 export interface PokemonListState {
   retrieved: boolean;
-  data: Pokemon[];
+  cached: boolean;
+  offset: number;
+  limit: number;
+  maxLength: number;
+  items: Pokemon[];
 }
 
 export const initialPokemonListState: PokemonListState = {
   retrieved: false,
-  data: null,
+  cached: false,
+  offset: null,
+  limit: null,
+  maxLength: null,
+  items: [],
 };
 
 export const pokemonListReducer = createReducer(
@@ -18,6 +26,10 @@ export const pokemonListReducer = createReducer(
     return {
       ...state,
       retrieved: false,
+      cached: action.cached,
+      offset: action.offset,
+      limit: action.limit,
+      maxLength: action.maxLength,
     };
   }),
 
@@ -25,7 +37,7 @@ export const pokemonListReducer = createReducer(
     return {
       ...state,
       retrieved: true,
-      data: action.list,
+      items: state.items.concat(action.items),
     };
   }),
 );

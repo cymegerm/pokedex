@@ -6,4 +6,64 @@
     &Item {
     }
   }
+
+  &_Loader {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 50px;
+    width: 50px;
+    margin: -25px 0 0 -25px;
+    border: 5px solid transparent;
+    border-top-color: #000000;
+    border-bottom-color: #000000;
+    border-radius: 50%;
+    -webkit-animation: spinner2 0.5s linear infinite;
+    animation: spinner2 0.5s linear infinite;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      bottom: 5px;
+      left: 5px;
+      border: 5px solid transparent;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.25);
+      -webkit-animation: spinner2_after 1s linear infinite;
+      animation: spinner2_after 1s linear infinite;
+    }
+  }
+
+  @keyframes spinner2 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    50% {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spinner2_after {
+    0% {
+      border-top: 5px solid #000000;
+      border-bottom: 5px solid #000000;
+    }
+    50% {
+      border-top: 5px solid rgba(0, 0, 0, 0.25);
+      border-bottom: 5px solid rgba(0, 0, 0, 0.25);
+    }
+    100% {
+      border-top: 5px solid #000000;
+      border-bottom: 5px solid #000000;
+    }
+  }
 }

@@ -13,6 +13,7 @@ export const rootRoutes: Routes = [
     path: 'pokedex',
     loadChildren: () => import('./pokemon-list/pokemon-list.module').then((mod) => mod.PokemonListModule),
     resolve: { pokemonList: PokemonListResolver },
+    runGuardsAndResolvers: 'paramsOrQueryParamsChange',
   },
   {
     path: 'page-not-found',

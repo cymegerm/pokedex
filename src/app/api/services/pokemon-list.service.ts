@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class PokemonListService {
   constructor(private http: HttpClient) {}
 
-  retrievePokemonList(offset: string = '0', limit: string = '10') {
+  retrievePokemonList(offset: number, limit: number) {
     return this.http.get(`/api/pokemons?offset=${offset}&limit=${limit}`);
   }
 }

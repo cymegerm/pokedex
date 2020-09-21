@@ -15,7 +15,11 @@ describe('PokemonList Reducer', () => {
 
       const previousInitialPokemonListState: PokemonListState = {
         retrieved: false,
-        data: null,
+        cached: false,
+        offset: null,
+        limit: null,
+        maxLength: null,
+        items: [],
       };
 
       const result = pokemonListReducer(initialPokemonListState, action);
