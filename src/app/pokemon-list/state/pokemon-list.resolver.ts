@@ -38,7 +38,7 @@ export class PokemonListResolver implements Resolve<any> {
           this.router.navigateByUrl('/pokedex');
         }
 
-        if (offset < this.pokemonListItems.length) {
+        if (this.pokemonListItems.indexOf(offset) && offset + limit <= this.pokemonListItems.length) {
           cached = true;
         }
 
