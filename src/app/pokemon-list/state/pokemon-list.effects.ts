@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 import { exhaustMap, map } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
@@ -7,7 +8,6 @@ import { Pokemon } from '@app/api/models';
 import { PokemonListService } from '@app/api/services';
 import { AppState } from '@app/state/app.reducers';
 import { PokemonListActions } from './pokemon-list.action-types';
-import { of } from 'rxjs';
 
 @Injectable()
 export class PokemonListEffects {

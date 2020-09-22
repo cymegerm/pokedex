@@ -8,7 +8,7 @@ export interface AppState {}
 export const reducers: ActionReducerMap<AppState> = {
   router: routerReducer,
   pokemonList: pokemonListReducer,
-  /*pokemonDetail: pokemonDetailReducer,*/
+  pokemonDetail: pokemonDetailReducer,
 };
 
 export const metaReducers: MetaReducer<AppState>[] = [];

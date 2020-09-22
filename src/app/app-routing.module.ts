@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, UrlSerializer } from '@angular/router';
 import { PageNotFoundComponent } from '@app/page-not-found/page-not-found.component';
-import { PokemonListResolver } from '@app/pokemon-list/state/pokemon-list.resolver';
 
 export const rootRoutes: Routes = [
   {
@@ -12,8 +11,6 @@ export const rootRoutes: Routes = [
   {
     path: 'pokedex',
     loadChildren: () => import('./pokemon-list/pokemon-list.module').then((mod) => mod.PokemonListModule),
-    resolve: { pokemonList: PokemonListResolver },
-    runGuardsAndResolvers: 'paramsOrQueryParamsChange',
   },
   {
     path: 'page-not-found',
@@ -37,6 +34,5 @@ export const rootRoutes: Routes = [
     }),
   ],
   exports: [RouterModule],
-  providers: [PokemonListResolver],
 })
 export class AppRoutingModule {}

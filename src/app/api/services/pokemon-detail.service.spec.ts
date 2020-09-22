@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PokemonDetailService } from './pokemon-detail.service';
 
-xdescribe('PokemonDetailService', () => {
+describe('PokemonDetailService', () => {
   let service: PokemonDetailService;
 
   beforeEach(() => {

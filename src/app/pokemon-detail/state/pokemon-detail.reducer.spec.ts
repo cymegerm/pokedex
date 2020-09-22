@@ -14,7 +14,8 @@ describe('PokemonDetail Reducer', () => {
       const action = {} as any;
 
       const previousInitialPokemonDetailState: PokemonDetailState = {
-        pokemonDetail: undefined,
+        retrieved: false,
+        detail: null,
       };
 
       const result = pokemonDetailReducer(initialPokemonDetailState, action);

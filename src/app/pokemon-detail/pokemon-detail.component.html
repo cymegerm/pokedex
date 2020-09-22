@@ -1,1 +1,6 @@
-<p>pokemon-detail works!</p>
+<section class="pokemondetail-PokemonDetail">
+  <ng-template #loading><pok-loader></pok-loader></ng-template>
+  <div *ngIf="pokemonDetailRetrieved$ | async; else loading">
+    <div *ngIf="pokemonDetail$ | async as pokemon">{{ pokemon.name }}</div>
+  </div>
+</section>

@@ -5,13 +5,14 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { provideMockActions } from '@ngrx/effects/testing';
 
+import { PokemonDetailService } from '@app/api/services';
 import { metaReducers, reducers } from '@app/state/app.reducers';
 import { PokemonDetailModule } from '../pokemon-detail.module';
-/*import { PokemonDetailEffects } from './pokemon-detail.effects';*/
+import { PokemonDetailEffects } from './pokemon-detail.effects';
 
-xdescribe('PokemonDetailEffects', () => {
+describe('PokemonDetailEffects', () => {
   let actions$: Observable<any>;
-  /*let effects: PokemonDetailEffects;*/
+  let effects: PokemonDetailEffects;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -19,15 +20,15 @@ xdescribe('PokemonDetailEffects', () => {
         HttpClientTestingModule,
         PokemonDetailModule,
         StoreModule.forRoot(reducers, { metaReducers }),
-        /*EffectsModule.forRoot([PokemonDetailEffects]),*/
+        EffectsModule.forRoot([PokemonDetailEffects]),
       ],
-      providers: [/*PokemonDetailService,*/ /*PokemonDetailEffects,*/ provideMockActions(() => actions$)],
+      providers: [PokemonDetailService, PokemonDetailEffects, provideMockActions(() => actions$)],
     });
 
-    /*effects = TestBed.inject<PokemonDetailEffects>(PokemonDetailEffects);*/
+    effects = TestBed.inject<PokemonDetailEffects>(PokemonDetailEffects);
   });
 
   it('should create the pokemon-detail effects', () => {
-    /*expect(effects).toBeTruthy();*/
+    expect(effects).toBeTruthy();
   });
 });

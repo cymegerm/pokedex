@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { api_base_url } from '../../../../server/api-base-url';
+import { Pokemon } from '@app/api/models';
 
 @Injectable({
   providedIn: 'root',
@@ -8,35 +9,60 @@ import { api_base_url } from '../../../../server/api-base-url';
 export class PokemonDetailService {
   constructor(private http: HttpClient) {}
 
-  retrievePokemonEvolutionChainUrl(pokemonId: number) {
-    return this.http.get(`${api_base_url}/pokemon-species/${pokemonId}`);
-
-    // Move to resolver...
-    /*let evolution_chain_url: string;*/
-    /*.subscribe((response: HttpResponse<any>) => {
-      evolution_chain_url = response.body.results.evolution_chain.url;*/
-  }
-
-  retrievePokemonEvolution(pokemonId: number) {
-    this.retrievePokemonEvolutionChainUrl(pokemonId).subscribe((response: HttpResponse<any>) => {
-      const evolution_chain_url: string = response.body.results.evolution_chain.url;
-
-      return this.http.get(`${evolution_chain_url}`);
+  recursiveObjectSearch(obj, searchKey: string, results: string[] = []) {
+    const r = results;
+    Object.keys(obj).forEach((key) => {
+      const val = obj[key];
+      if (key === searchKey && typeof val === 'object') {
+        r.push(val.name);
+      } else if (val && typeof val === 'object') {
+        this.recursiveObjectSearch(val, searchKey, r);
+      }
     });
+    return r;
   }
 
-  retrievePokemonDetail(id: string) {}
-}
+  private retrievePokemonEvolutionChainUrl(id: string) {
+    return this.http.get(`${api_base_url}/pokemon-species/${id}`).toPromise();
+  }
 
-/*
-response.body.results.forEach((pokemon: any) => {
-  list.push({
-    id: pokemon.id,
-    name: pokemon.name,
-    types: pokemon.types,
-    species: pokemon.species,
-    evolution: [],
-    abilities: Object.values(pokemon.abilities.ability.name),
-    image_url: pokemon.sprites.front_default,
-  });
-});*/
+  private async retrievePokemonEvolution(id: string) {
+    try {
+      const response = await this.retrievePokemonEvolutionChainUrl(id);
+      const evolution_chain_url: string = response['evolution_chain'].url;
+
+      return this.http.get(`${evolution_chain_url}`).toPromise();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  private retrievePokemonProfile(id: string) {
+    return this.http.get(`${api_base_url}/pokemon/${id}`).toPromise();
+  }
+
+  async retrievePokemonDetail(id: string) {
+    try {
+      const results = await Promise.all([this.retrievePokemonProfile(id), this.retrievePokemonEvolution(id)]);
+      let abilities: string[] = [];
+      results[0]['abilities'].forEach((item) => {
+        abilities.push(item.ability.name);
+      });
+      const pokemon: Pokemon = {
+        url: null,
+        name: results[0]['name'],
+        id: results[0]['id'],
+        types: results[0]['types'],
+        species: results[0]['species'],
+        evolution: this.recursiveObjectSearch(results[1], 'species'),
+        height: results[0]['height'],
+        abilities,
+        image_url: results[0]['sprites'].front_default,
+      };
+      console.log(pokemon);
+      return pokemon;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+}

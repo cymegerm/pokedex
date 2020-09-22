@@ -4,11 +4,11 @@ import { Store } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
 
 import { AppState } from '@app/state/app.reducers';
+import { SharedModule } from '@app/shared/shared.module';
 import { PokemonListComponent } from './pokemon-list.component';
 import { initialPokemonListState } from './state/pokemon-list.reducer';
 import * as pokemonListSelectors from './state/pokemon-list.selectors';
 import * as fakePokemonList from './test/fakePokemonList.json';
-import { SharedModule } from '@app/shared/shared.module';
 
 describe('PokemonListComponent', () => {
   let component: PokemonListComponent;

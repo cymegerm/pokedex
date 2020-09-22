@@ -3,23 +3,33 @@ import { Pokemon } from '@app/api/models';
 import { PokemonDetailActions } from './pokemon-detail.action-types';
 
 export interface PokemonDetailState {
-  pokemonDetail: Pokemon;
+  retrieved: boolean;
+  detail: Pokemon;
 }
 
 export const initialPokemonDetailState: PokemonDetailState = {
-  pokemonDetail: undefined,
+  retrieved: false,
+  detail: null,
 };
 
 export const pokemonDetailReducer = createReducer(
   initialPokemonDetailState,
+  // @ts-ignore
   on(PokemonDetailActions.pokemonDetailRequested, (state, action) => {
-    return state;
+    return {
+      ...state,
+      retrieved: false,
+      detail: {
+        id: action.id,
+      },
+    };
   }),
 
   on(PokemonDetailActions.pokemonDetailRetrieved, (state, action) => {
     return {
       ...state,
-      pokemonDetail: action.pokemon,
+      retrieved: true,
+      detail: action.pokemon,
     };
   }),
 );
