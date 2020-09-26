@@ -9,5 +9,6 @@ export const pokemonDetailRetrieved = createSelector(selectPokemonDetailState, (
 });
 
 export const pokemonDetail = createSelector(selectPokemonDetailState, (pokemonDetail) => {
+  console.log(pokemonDetail.detail);
   return pokemonDetail.detail;
 });

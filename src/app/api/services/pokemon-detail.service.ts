@@ -48,7 +48,7 @@ export class PokemonDetailService {
       results[0]['abilities'].forEach((item) => {
         abilities.push(item.ability.name);
       });
-      const pokemon: Pokemon = {
+      const pokemon: Pokemon = Object.assign({
         url: null,
         name: results[0]['name'],
         id: results[0]['id'],
@@ -58,8 +58,7 @@ export class PokemonDetailService {
         height: results[0]['height'],
         abilities,
         image_url: results[0]['sprites'].front_default,
-      };
-      console.log(pokemon);
+      });
       return pokemon;
     } catch (error) {
       console.error(error);

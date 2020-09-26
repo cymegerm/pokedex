@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { SharedModule } from '@app/shared/shared.module';
 import { PokemonDetailComponent } from './pokemon-detail.component';
 
+// Providing a mock `pokemon-detail service` will fix the `circular json` issue
 xdescribe('PokemonDetailComponent', () => {
   let component: PokemonDetailComponent;
   let fixture: ComponentFixture<PokemonDetailComponent>;

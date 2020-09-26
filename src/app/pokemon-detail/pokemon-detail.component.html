@@ -1,6 +1,45 @@
-<section class="pokemondetail-PokemonDetail">
+<main class="pokemondetail-PokemonDetail">
   <ng-template #loading><pok-loader></pok-loader></ng-template>
-  <div *ngIf="pokemonDetailRetrieved$ | async; else loading">
-    <div *ngIf="pokemonDetail$ | async as pokemon">{{ pokemon.name }}</div>
+  <div class="pokemondetail-PokemonDetail_CardContainer" *ngIf="pokemonDetailRetrieved$ | async; else loading">
+    <div class="pokemondetail-PokemonDetail_Card" *ngIf="pokemonDetail$ | async as pokemon">
+      <div class="pokemondetail-PokemonDetail_ImageContainer">
+        <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }} image" class="pokemondetail-PokemonDetail_Image" />
+      </div>
+      <div class="pokemondetail-PokemonDetail_NameContainer">
+        <h2 class="pokemondetail-PokemonDetail_NameHeading">{{ pokemon.name }}</h2>
+      </div>
+      <div class="pokemondetail-PokemonDetail_TypesContainer">
+        <span class="pokemondetail-PokemonDetail_TypesListTitle">Types:&nbsp;</span>
+        <ul class="pokemondetail-PokemonDetail_TypesList" *ngFor="let type of pokemon.types">
+          <li class="pokemondetail-PokemonDetail_TypesListItem">
+            <span>{{ type['type'].name }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="pokemondetail-PokemonDetail_SpeciesContainer">
+        <span class="pokemondetail-PokemonDetail_SpeciesTitle">Species:&nbsp;</span>
+        <span class="pokemondetail-PokemonDetail_SpeciesText">{{ pokemon.species?.name }}</span>
+      </div>
+      <div class="pokemondetail-PokemonDetail_EvolutionContainer">
+        <span class="pokemondetail-PokemonDetail_EvolutionListTitle">Evolution:&nbsp;</span>
+        <ul class="pokemondetail-PokemonDetail_EvolutionList" *ngFor="let species of pokemon.evolution">
+          <li class="pokemondetail-PokemonDetail_EvolutionListItem">
+            <span>{{ species }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="pokemondetail-PokemonDetail_HeightContainer">
+        <span class="pokemondetail-PokemonDetail_HeightTitle">Height:&nbsp;</span>
+        <span class="pokemondetail-PokemonDetail_HeightText">{{ pokemon.height }}</span>
+      </div>
+      <div class="pokemondetail-PokemonDetail_AbilitiesContainer">
+        <span class="pokemondetail-PokemonDetail_AbilitiesListTitle">Abilities:&nbsp;</span>
+        <ul class="pokemondetail-PokemonDetail_AbilitiesList" *ngFor="let ability of pokemon.abilities">
+          <li class="pokemondetail-PokemonDetail_AbilitiesListItem">
+            <span>{{ ability }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-</section>
+</main>

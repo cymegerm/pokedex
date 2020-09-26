@@ -1,0 +1,14 @@
+@import 'global-styles';
+
+.app-appcontainer {
+  width: 100%;
+
+  &_LayoutContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: $max-app-width;
+    margin: 0 auto;
+    font-size: $size-text-xxs;
+    outline: chartreuse dashed;
+  }
+}

@@ -43,16 +43,18 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $font-primary;
   // This sets 1rem for the entire design when the viewport width is 1200px and up
   // and if the browser font size is not set to a custom value.
   font-size: 16px;
   font-weight: 400;
   line-height: 1.7;
-  color: $color-text-black;
+  color: $color-text-grey-1;
+  background-color: $color-background-grey-1;
 }
 
 h1 {
+  font-family: $font-header-jumbo;
   font-size: $size-text-xxl;
   font-weight: 500;
 }
@@ -89,4 +91,8 @@ a:focus,
 a:active,
 a:visited {
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
