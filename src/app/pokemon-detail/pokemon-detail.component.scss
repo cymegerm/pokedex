@@ -1,20 +1,21 @@
 @import 'global-styles';
 
+// TODO: Add media-queries for card width
 .pokemondetail-PokemonDetail {
   &_Card {
-    background-color: $color-background-grey-2;
     width: 96%;
     display: grid;
     grid-template-rows: repeat(7, min-content);
-    grid-template-columns: 5% min-content 1fr max-content 5%;
-    grid-row-gap: 1em;
-    /*grid-column-gap: 2em;*/
+    grid-template-columns: 3% min-content 1fr max-content 3%;
+    grid-row-gap: 1.5em;
     border-radius: 1em;
     margin: auto;
-    padding: 1em 0;
+    padding: 1em 0 5em;
+    background-color: $color-background-grey-2;
+    color: $color-text-grey-3;
 
-    &Container {
-      /*background-color: blueviolet;*/
+    @include respond(sm) {
+      grid-template-columns: 4% min-content 1fr max-content 4%;
     }
   }
 
@@ -23,7 +24,6 @@
     object-fit: cover;
 
     &Container {
-      /*background-color: aliceblue;*/
       height: 10em;
       display: flex;
       flex-direction: column;
@@ -35,7 +35,6 @@
 
   &_Name {
     &Container {
-      /*background-color: burlywood;*/
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -44,25 +43,31 @@
     }
 
     &Heading {
-      transform: translateY(-1em);
+      color: $color-text-yellow;
+      letter-spacing: 0.4em;
+      transform: translateY(-1.5em);
     }
   }
 
   &_Types {
     &Container {
       display: flex;
-      /*background-color: #f6c6ce;*/
       grid-row: 3 / 4;
       grid-column: 2 / 5;
     }
 
     &List {
+      @include detailText;
+
       &Title {
+        @include detailTitle;
       }
 
       &Item {
-        & span {
-          background-color: #7f7f7f;
+        display: inline-grid;
+
+        &:not(:last-of-type) {
+          padding-right: 1em;
         }
       }
     }
@@ -70,38 +75,42 @@
 
   &_Species {
     &Container {
-      /*background-color: coral;*/
       grid-row: 4 / 5;
       grid-column: 2 / 5;
     }
 
     &Title {
+      @include detailTitle;
+      display: inline-grid;
     }
 
     &Text {
-      background-color: #7f7f7f;
+      @include detailText;
+      display: inline-grid;
     }
   }
 
   &_Evolution {
     &Container {
-      /*background-color: darkseagreen;*/
+      display: flex;
+      flex-direction: column;
+      align-items: start;
       grid-row: 5 / 6;
       grid-column: 2 / 5;
     }
 
     &List {
-      display: inline-grid;
+      @include detailList;
 
       &Title {
-        display: block;
+        @include detailTitleList;
       }
 
       &Item {
-        margin-right: 1em;
+        color: $color-text-blue;
 
-        & span {
-          background-color: #7f7f7f;
+        &:not(:last-of-type) {
+          padding-right: 1em;
         }
       }
     }
@@ -109,38 +118,42 @@
 
   &_Height {
     &Container {
-      /*background-color: firebrick;*/
       grid-row: 6 / 7;
       grid-column: 2 / 5;
     }
 
     &Title {
+      @include detailTitle;
+      display: inline-grid;
     }
 
     &Text {
-      background-color: #7f7f7f;
+      @include detailText;
+      display: inline-grid;
     }
   }
 
   &_Abilities {
     &Container {
-      /*background-color: yellowgreen;*/
+      display: flex;
+      flex-direction: column;
+      align-items: start;
       grid-row: 7 / 8;
       grid-column: 2 / 5;
     }
 
     &List {
-      display: inline-grid;
+      @include detailList;
 
       &Title {
-        display: block;
+        @include detailTitleList;
       }
 
       &Item {
-        margin-right: 1em;
+        color: $color-text-blue;
 
-        & span {
-          background-color: #7f7f7f;
+        &:not(:last-of-type) {
+          padding-right: 1em;
         }
       }
     }
