@@ -1,6 +1,5 @@
 @import 'global-styles';
 
-// TODO: Add media-queries for card width
 .pokemondetail-PokemonDetail {
   &_Card {
     width: 96%;
@@ -15,7 +14,22 @@
     color: $color-text-grey-3;
 
     @include respond(sm) {
-      grid-template-columns: 4% min-content 1fr max-content 4%;
+      width: 94%;
+      grid-template-columns: 5% min-content 1fr max-content 5%;
+    }
+
+    @include respond(md) {
+      width: 92%;
+      grid-template-columns: 7% min-content 1fr max-content 7%;
+    }
+
+    @include respond(lg) {
+      width: 82%;
+      grid-template-columns: 9% min-content 1fr max-content 9%;
+    }
+
+    @include respond(xl) {
+      width: 67%;
     }
   }
 
@@ -64,10 +78,19 @@
       }
 
       &Item {
-        display: inline-grid;
+        display: inline-block;
 
         &:not(:last-of-type) {
-          padding-right: 1em;
+          padding-right: 0.8em;
+        }
+
+        &Separator {
+          padding-left: 0.8em;
+          color: $color-text-grey-3;
+
+          &-hidden {
+            display: none;
+          }
         }
       }
     }
@@ -94,7 +117,7 @@
     &Container {
       display: flex;
       flex-direction: column;
-      align-items: start;
+      align-items: flex-start;
       grid-row: 5 / 6;
       grid-column: 2 / 5;
     }
@@ -102,8 +125,16 @@
     &List {
       @include detailList;
 
+      &-singleitem {
+        border-top-right-radius: 0;
+      }
+
       &Title {
         @include detailTitleList;
+
+        &-singleitem {
+          border-bottom-right-radius: 0.5em;
+        }
       }
 
       &Item {
@@ -111,6 +142,15 @@
 
         &:not(:last-of-type) {
           padding-right: 1em;
+        }
+
+        &Separator {
+          padding-left: 1em;
+          color: $color-text-grey-3;
+
+          &-hidden {
+            display: none;
+          }
         }
       }
     }
@@ -137,7 +177,7 @@
     &Container {
       display: flex;
       flex-direction: column;
-      align-items: start;
+      align-items: flex-start;
       grid-row: 7 / 8;
       grid-column: 2 / 5;
     }
@@ -145,15 +185,32 @@
     &List {
       @include detailList;
 
+      &-singleitem {
+        border-top-right-radius: 0;
+      }
+
       &Title {
         @include detailTitleList;
+
+        &-singleitem {
+          border-bottom-right-radius: 0.5em;
+        }
       }
 
       &Item {
         color: $color-text-blue;
 
         &:not(:last-of-type) {
-          padding-right: 1em;
+          padding-right: 0.8em;
+        }
+
+        &Separator {
+          padding-left: 0.8em;
+          color: $color-text-grey-3;
+
+          &-hidden {
+            display: none;
+          }
         }
       }
     }

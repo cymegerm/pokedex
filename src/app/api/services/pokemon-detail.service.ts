@@ -54,7 +54,7 @@ export class PokemonDetailService {
         id: results[0]['id'],
         types: results[0]['types'],
         species: results[0]['species'],
-        evolution: this.recursiveObjectSearch(results[1], 'species'),
+        evolution: this.recursiveObjectSearch(results[1], 'species').reverse(),
         height: results[0]['height'],
         abilities,
         image_url: results[0]['sprites'].front_default,

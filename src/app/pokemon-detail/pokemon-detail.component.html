@@ -1,6 +1,6 @@
 <main class="pokemondetail-PokemonDetail">
   <ng-template #loading><pok-loader></pok-loader></ng-template>
-  <div class="pokemondetail-PokemonDetail_CardContainer" *ngIf="pokemonDetailRetrieved$ | async; else loading">
+  <div *ngIf="pokemonDetailRetrieved$ | async; else loading">
     <div class="pokemondetail-PokemonDetail_Card" *ngIf="pokemonDetail$ | async as pokemon">
       <div class="pokemondetail-PokemonDetail_ImageContainer">
         <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }} image" class="pokemondetail-PokemonDetail_Image" />
@@ -13,6 +13,14 @@
         <ul class="pokemondetail-PokemonDetail_TypesList">
           <li class="pokemondetail-PokemonDetail_TypesListItem" *ngFor="let type of pokemon.types">
             <span>{{ type['type'].name }}</span>
+            <span
+              class="pokemondetail-PokemonDetail_TypesListItemSeparator"
+              [ngClass]="{
+                'pokemondetail-PokemonDetail_EvolutionListItemSeparator-hidden':
+                  pokemon.types.indexOf(type) == pokemon.types.length - 1
+              }"
+              >&#124;</span
+            >
           </li>
         </ul>
       </div>
@@ -21,10 +29,30 @@
         <p class="pokemondetail-PokemonDetail_SpeciesText">{{ pokemon.species?.name }}</p>
       </div>
       <div class="pokemondetail-PokemonDetail_EvolutionContainer">
-        <p class="pokemondetail-PokemonDetail_EvolutionListTitle">Evolution:</p>
-        <ul class="pokemondetail-PokemonDetail_EvolutionList">
+        <p
+          class="pokemondetail-PokemonDetail_EvolutionListTitle"
+          [ngClass]="{
+            'pokemondetail-PokemonDetail_EvolutionListTitle-singleitem': pokemon?.evolution?.length == 1
+          }"
+        >
+          Evolution:
+        </p>
+        <ul
+          class="pokemondetail-PokemonDetail_EvolutionList"
+          [ngClass]="{
+            'pokemondetail-PokemonDetail_EvolutionList-singleitem': pokemon?.evolution?.length == 1
+          }"
+        >
           <li class="pokemondetail-PokemonDetail_EvolutionListItem" *ngFor="let species of pokemon.evolution">
             <span>{{ species }}</span>
+            <span
+              class="pokemondetail-PokemonDetail_EvolutionListItemSeparator"
+              [ngClass]="{
+                'pokemondetail-PokemonDetail_EvolutionListItemSeparator-hidden':
+                  pokemon.evolution.indexOf(species) == pokemon.evolution.length - 1
+              }"
+              >&#9654;
+            </span>
           </li>
         </ul>
       </div>
@@ -33,10 +61,30 @@
         <p class="pokemondetail-PokemonDetail_HeightText">{{ pokemon.height }}</p>
       </div>
       <div class="pokemondetail-PokemonDetail_AbilitiesContainer">
-        <p class="pokemondetail-PokemonDetail_AbilitiesListTitle">Abilities</p>
-        <ul class="pokemondetail-PokemonDetail_AbilitiesList">
+        <p
+          class="pokemondetail-PokemonDetail_AbilitiesListTitle"
+          [ngClass]="{
+            'pokemondetail-PokemonDetail_AbilitiesListTitle-singleitem': pokemon?.abilities?.length == 1
+          }"
+        >
+          Abilities:
+        </p>
+        <ul
+          class="pokemondetail-PokemonDetail_AbilitiesList"
+          [ngClass]="{
+            'pokemondetail-PokemonDetail_AbilitiesList-singleitem': pokemon?.abilities?.length == 1
+          }"
+        >
           <li class="pokemondetail-PokemonDetail_AbilitiesListItem" *ngFor="let ability of pokemon.abilities">
             <span>{{ ability }}</span>
+            <span
+              class="pokemondetail-PokemonDetail_AbilitiesListItemSeparator"
+              [ngClass]="{
+                'pokemondetail-PokemonDetail_AbilitiesListItemSeparator-hidden':
+                  pokemon.abilities.indexOf(ability) == pokemon.abilities.length - 1
+              }"
+              >&#124;</span
+            >
           </li>
         </ul>
       </div>
