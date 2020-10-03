@@ -61,12 +61,12 @@ h1 {
 
 h2 {
   font-size: $size-text-xl;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h3 {
-  font-size: $size-text-lg;
-  font-weight: 600;
+  font-size: $size-text-xs;
+  font-weight: 400;
 }
 
 h4 {
@@ -81,7 +81,7 @@ h5 {
 
 h6 {
   font-size: $size-text-xs;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 a,
@@ -91,6 +91,10 @@ a:focus,
 a:active,
 a:visited {
   text-decoration: none;
+}
+
+button {
+  border: none;
 }
 
 ul {

@@ -1,20 +1,39 @@
-<section class="pokemonlist-PokemonList">
+<main class="pokemonlist-PokemonList">
   <ng-template #loading><pok-loader></pok-loader></ng-template>
-  <div class="pokemonlist-PokemonList_ListWrapper" *ngIf="pokemonListRetrieved$ | async; else loading">
-    <ul class="pokemonlist-PokemonList_List" *ngFor="let pokemon of pokemonListItems">
-      <li class="pokemonlist-PokemonList_ListItem">
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
-            pokemon.url.slice(34, -1)
-          }}.png"
-          alt="pokemon front image"
-        />
-        <span>{{ pokemon.name }}</span>
+  <div class="pokemonlist-PokemonList_ListContainer" *ngIf="pokemonListRetrieved$ | async; else loading">
+    <ul class="pokemonlist-PokemonList_List">
+      <li class="pokemonlist-PokemonList_ListItem" *ngFor="let pokemon of pokemonListItems">
+        <div class="pokemonlist-PokemonList_ListItemImageContainer">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
+              pokemon.url.slice(34, -1)
+            }}.png"
+            alt="pokemon front image"
+            class="pokemonlist-PokemonList_ListItemImage"
+          />
+        </div>
+        <div class="pokemonlist-PokemonList_ListItemNameContainer">
+          <h6 class="pokemonlist-PokemonList_ListItemName">{{ pokemon.name }}</h6>
+        </div>
       </li>
     </ul>
-    <button *ngIf="pokemonListOffset > 0" (click)="retrievePreviousPokemons()">Back</button>
-    <button *ngIf="pokemonListOffset + pokemonListLimit < pokemonListMaxLength" (click)="retrieveMorePokemons()">
-      More
-    </button>
+    <div class="pokemonlist-PokemonList_ListButtonContainer">
+      <div class="pokemonlist-PokemonList_ListButtonContainerFlex">
+        <button
+          class="pokemonlist-PokemonList_ListButtonPrevious"
+          *ngIf="pokemonListOffset > 0"
+          (click)="retrievePreviousPokemons()"
+        >
+          Back
+        </button>
+        <button
+          class="pokemonlist-PokemonList_ListButtonNext"
+          *ngIf="pokemonListOffset + pokemonListLimit < pokemonListMaxLength"
+          (click)="retrieveMorePokemons()"
+        >
+          More
+        </button>
+      </div>
+    </div>
   </div>
-</section>
+</main>
