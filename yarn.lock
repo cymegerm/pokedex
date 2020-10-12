@@ -1147,16 +1147,17 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@briebug/cypress-schematic@^4.0.3":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@briebug/cypress-schematic/-/cypress-schematic-4.0.3.tgz#2735ad1bc7f389fd4bb3e2c9fd17dc50a02a2d76"
-  integrity sha512-e0zWn3F5UjEbWET5uuWvzISK+ldlxNE/45Nvt7fwRqXZ1yUzq42O8odPJ/PzpnXcuUSmOgZ0ne2pUw5p7kyfwg==
+"@briebug/cypress-schematic@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@briebug/cypress-schematic/-/cypress-schematic-4.2.0.tgz#a06d90a8f815150152faf4066603c9b809d1a25b"
+  integrity sha512-wTfZgEgoW4S2+7li5d7UaW0xMCrrrsuglY3qR6lrYAOci529broHOL1NyTOOMePhcwC+2V/7l87H+c2wWWibTQ==
   dependencies:
     "@angular-devkit/architect" "^0.1001.0"
     "@angular-devkit/core" "^10.1.0"
     "@angular-devkit/schematics" "^10.1.0"
     "@schematics/angular" "^10.1.0"
-    rxjs "^6.6.2"
+    cypress "^5.1.0"
+    rxjs "6.6.2"
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
@@ -3751,7 +3752,7 @@ cyclist@^1.0.1:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
-cypress@^5.3.0:
+cypress@^5.1.0, cypress@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/cypress/-/cypress-5.3.0.tgz#91122219ae66ab910058970dbf36619ab0fbde6c"
   integrity sha512-XgebyqL7Th6/8YenE1ddb7+d4EiCG2Jvg/5c8+HPfFFY/gXnOVhoCVUU3KW8qg3JL7g0B+iJbHd5hxuCqbd1RQ==
@@ -9324,7 +9325,7 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs@6.6.2, rxjs@^6.3.3, rxjs@^6.5.3, rxjs@^6.6.0, rxjs@^6.6.2:
+rxjs@6.6.2, rxjs@^6.3.3, rxjs@^6.5.3, rxjs@^6.6.0:
   version "6.6.2"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.2.tgz#8096a7ac03f2cc4fe5860ef6e572810d9e01c0d2"
   integrity sha512-BHdBMVoWC2sL26w//BCu3YzKT4s2jip/WhwsGEDmeKYBhKDZeYezVUnHatYB7L85v5xs0BAQmg6BEYJEKxBabg==
