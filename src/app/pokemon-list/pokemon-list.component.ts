@@ -51,4 +51,8 @@ export class PokemonListComponent implements OnInit {
   retrievePreviousPokemons() {
     return this.location.back();
   }
+
+  navigateToPokemonDetail(id: string) {
+    this.router.navigateByUrl(`/pokedex/${id}`);
+  }
 }
