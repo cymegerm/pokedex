@@ -2,7 +2,11 @@
   <ng-template #loading><pok-loader></pok-loader></ng-template>
   <div class="pokemonlist-PokemonList_ListContainer" *ngIf="pokemonListRetrieved$ | async; else loading">
     <ul class="pokemonlist-PokemonList_List">
-      <li class="pokemonlist-PokemonList_ListItem" *ngFor="let pokemon of pokemonListItems">
+      <li
+        class="pokemonlist-PokemonList_ListItem"
+        *ngFor="let pokemon of pokemonListItems"
+        (click)="navigateToPokemonDetail(pokemon.url.slice(34, -1))"
+      >
         <div class="pokemonlist-PokemonList_ListItemImageContainer">
           <img
             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
