@@ -1,7 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Press+Start+2P&display=swap');
+// TYPOGRAPHY
 
-$font-primary: 'IBM Plex Mono', monospace;
+// Fonts
+
+$font-primary: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
 $font-header-jumbo: 'Press Start 2P', cursive;
+
+// Font-size
+$size-text-xxs: 14px;
+$size-text-xs: 16px;
+$size-text-sm: 18px;
+$size-text-md: 22px;
+$size-text-lg: 28px;
+$size-text-xl: 32px;
+$size-text-xxl: 64px;
 
 // COLORS
 
@@ -25,17 +36,6 @@ $color-background-grey-2: #1c1818;
 $color-background-grey-3: #171011;
 $color-background-grey-5: #181112;
 $color-background-blue: #96fafa;
-
-// TYPOGRAPHY
-
-// Font-size
-$size-text-xxs: 14px;
-$size-text-xs: 16px;
-$size-text-sm: 18px;
-$size-text-md: 22px;
-$size-text-lg: 28px;
-$size-text-xl: 32px;
-$size-text-xxl: 64px;
 
 // LENGTHS
 
