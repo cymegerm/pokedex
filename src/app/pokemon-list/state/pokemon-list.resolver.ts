@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { first, tap } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 import { select, Store } from '@ngrx/store';
 
 import { Pokemon } from '@app/api/models';
@@ -25,7 +25,7 @@ export class PokemonListResolver implements Resolve<any> {
 
     return this.store$.pipe(
       select(pokemonListParams),
-      tap((params) => {
+      map((params) => {
         const maxLength = 150;
         let cached = false;
         let offset;
