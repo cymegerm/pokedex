@@ -72,6 +72,8 @@ $breakpoint argument variable options:
   border-bottom-left-radius: 0.5em;
   padding: 1em 1.5em 1em 2em;
   background-color: $color-background-grey-4;
+  font-weight: 500;
+  font-style: italic;
 }
 
 @mixin detailText {
@@ -88,6 +90,8 @@ $breakpoint argument variable options:
   border-top-right-radius: 0.5em;
   padding: 1em 2em 0;
   background-color: $color-background-grey-4;
+  font-weight: 500;
+  font-style: italic;
 }
 
 @mixin detailList {
