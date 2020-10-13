@@ -1,6 +1,6 @@
 <main class="pokemonlist-PokemonList">
   <ng-template #loading><pok-loader></pok-loader></ng-template>
-  <div class="pokemonlist-PokemonList_ListContainer" *ngIf="pokemonListRetrieved$ | async; else loading">
+  <div *ngIf="pokemonListRetrieved$ | async; else loading">
     <ul class="pokemonlist-PokemonList_List">
       <li
         class="pokemonlist-PokemonList_ListItem"

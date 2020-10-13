@@ -16,10 +16,6 @@
       width: 94%;
     }
 
-    /*&Container {
-      background-color: yellowgreen;
-    }*/
-
     &Item {
       display: grid;
       grid-template-columns: 1em min-content 1fr max-content 2em;
