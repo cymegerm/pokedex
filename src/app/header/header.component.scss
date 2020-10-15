@@ -1,0 +1,33 @@
+@import 'global-styles';
+
+.app-Header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_Heading {
+    font-size: $size-text-lg;
+    letter-spacing: 0.1em;
+    color: $color-text-red;
+
+    &Anchor,
+    &Anchor:link,
+    &Anchor:visited {
+      opacity: 1;
+      transition: all 300ms;
+
+      &:hover,
+      &:active {
+        opacity: 0.9;
+      }
+    }
+
+    @include respond(sm) {
+      font-size: $size-text-xl;
+    }
+
+    @include respond(md) {
+      font-size: $size-text-xxl;
+    }
+  }
+}
