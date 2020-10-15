@@ -1,0 +1,12 @@
+@import 'global-styles';
+
+.app-Footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $color-text-grey-4;
+
+  &_HeadingHeart {
+    color: $color-text-pink;
+  }
+}
