@@ -60,6 +60,10 @@
       color: $color-text-yellow;
       letter-spacing: 0.4em;
       transform: translateY(-1.5em);
+
+      @include respond(sm) {
+        font-size: $size-text-sm;
+      }
     }
   }
 
