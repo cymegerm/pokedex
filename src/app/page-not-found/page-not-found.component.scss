@@ -1,6 +1,8 @@
 @import 'global-styles';
 
 .app-PageNotFound {
+  @include mainSection;
+
   width: 96%;
   display: grid;
   grid-template-rows: auto;

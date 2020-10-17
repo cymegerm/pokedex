@@ -1,6 +1,8 @@
 @import 'global-styles';
 
 .pokemondetail-PokemonDetail {
+  @include mainSection;
+
   &_Card {
     width: 96%;
     display: grid;
