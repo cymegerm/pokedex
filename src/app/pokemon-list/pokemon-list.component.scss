@@ -77,28 +77,12 @@
       }
 
       &Previous {
-        border-radius: 1.5em;
+        @include button;
         margin-right: 1.5em;
-        padding: 1.5em 4em;
-        background-color: $color-background-blue;
-        opacity: 0.8;
-        transition: all 300ms;
-
-        &:hover {
-          opacity: 1;
-        }
       }
 
       &Next {
-        border-radius: 1.5em;
-        padding: 1.5em 4em;
-        background-color: $color-background-blue;
-        opacity: 0.8;
-        transition: all 300ms;
-
-        &:hover {
-          opacity: 1;
-        }
+        @include button;
       }
     }
   }
