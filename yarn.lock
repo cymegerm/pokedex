@@ -1154,10 +1154,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@briebug/cypress-schematic@^4.2.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@briebug/cypress-schematic/-/cypress-schematic-4.2.2.tgz#e9e33e234a4d5a07d5ef5016a6d26f11a3243c8a"
-  integrity sha512-ViJB3LnYNRCq5v4jEjrSgqFpqUip1Dp5dVHl1agGVVo2o5JvIpj6SGQyA+iPR0NIZ0T09qWnvwd4BmybFeihrQ==
+"@briebug/cypress-schematic@^4.2.3":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/@briebug/cypress-schematic/-/cypress-schematic-4.2.3.tgz#2869168ff0935469f5107901b04d84ac11287f0e"
+  integrity sha512-5JiFCNyP/isM1AJSKaOJmNAwk5uA2UNaoUsmLfYSTKvzOxoawlY1Llh7zUvw7Y3KaHADJV68c4ucsQnWYDQWDw==
   dependencies:
     "@angular-devkit/architect" "^0.1001.0"
     "@angular-devkit/core" "^10.1.0"
