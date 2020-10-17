@@ -100,3 +100,23 @@ $breakpoint argument variable options:
   padding: 1em 2em;
   background-color: $color-background-grey-4;
 }
+
+// BUTTON BASE STYLES
+@mixin button {
+  border-radius: 1.5em;
+  padding: 1.5em 4em;
+  color: $color-text-grey-3;
+  background-color: $color-background-blue;
+  opacity: 0.8;
+  transition: all 300ms;
+
+  &:link,
+  &:visited {
+    opacity: 0.8;
+  }
+
+  &:hover,
+  &:active {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,103 @@
+@import 'global-styles';
+
+.app-PageNotFound {
+  width: 96%;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 3% 1fr 3%;
+  grid-row-gap: 3em;
+  margin: auto;
+
+  @include respond(sm) {
+    grid-template-columns: 4% 1fr 4%;
+    grid-row-gap: 4em;
+  }
+
+  @include respond(md) {
+    grid-template-columns: 5% 1fr 5%;
+    grid-row-gap: 5em;
+  }
+
+  @include respond(md) {
+    grid-template-columns: 10% 1fr 10%;
+    grid-row-gap: 5em;
+  }
+
+  @include respond(xl) {
+    grid-template-columns: 5% 1fr 2em min-content 5%;
+  }
+
+  &_Heading {
+    font-size: $size-text-xs;
+    color: $color-text-yellow;
+
+    @include respond(sm) {
+      font-size: $size-text-sm;
+    }
+
+    @include respond(md) {
+      font-size: $size-text-lg;
+    }
+
+    &Container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &AnchorContainer {
+      grid-column: 2 / 3;
+
+      @include respond(xl) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-row: 1 / 2;
+      }
+    }
+  }
+
+  &_Anchor {
+    @include button;
+
+    &Container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1.5em;
+
+      @include respond(sm) {
+        margin-top: 2em;
+      }
+
+      @include respond(sm) {
+        margin-top: 2.5em;
+      }
+    }
+  }
+
+  &_Image {
+    height: 100%;
+    object-fit: contain;
+
+    &Container {
+      display: flex;
+      flex-direction: column;
+      grid-column: 2 / 3;
+      height: 15em;
+      padding: 0 1em;
+
+      @include respond(sm) {
+        height: 25em;
+      }
+
+      @include respond(md) {
+        height: 30em;
+      }
+
+      @include respond(xl) {
+        grid-column: 4 / 5;
+      }
+    }
+  }
+}
