@@ -29,12 +29,12 @@
     grid-template-columns: 5% 1fr 2em min-content 5%;
   }
 
-  &_Heading {
-    font-size: $size-text-xs;
+  &_Message {
+    font-size: $size-text-sm;
     color: $color-text-yellow;
 
     @include respond(sm) {
-      font-size: $size-text-sm;
+      font-size: $size-text-md;
     }
 
     @include respond(md) {

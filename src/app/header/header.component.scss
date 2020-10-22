@@ -20,13 +20,5 @@
         opacity: 0.9;
       }
     }
-
-    @include respond(sm) {
-      font-size: $size-text-xl;
-    }
-
-    @include respond(md) {
-      font-size: $size-text-xxl;
-    }
   }
 }

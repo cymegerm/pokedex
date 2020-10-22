@@ -57,6 +57,14 @@ h1 {
   font-family: $font-header-jumbo;
   font-size: $size-text-lg;
   font-weight: 500;
+
+  @include respond(sm) {
+    font-size: $size-text-xl;
+  }
+
+  @include respond(md) {
+    font-size: $size-text-xxl;
+  }
 }
 
 h2 {
@@ -65,22 +73,21 @@ h2 {
 }
 
 h3 {
+  font-size: $size-text-sm;
+  font-weight: 400;
+
+  @include respond(sm) {
+    font-size: $size-text-md;
+  }
+}
+
+h4 {
   font-size: $size-text-xs;
   font-weight: 400;
 }
 
-h4 {
-  font-size: $size-text-md;
-  font-weight: 600;
-}
-
 h5 {
   font-size: $size-text-xxs;
-  font-weight: 400;
-}
-
-h6 {
-  font-size: $size-text-md;
   font-weight: 400;
 }
 
