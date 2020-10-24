@@ -5,6 +5,8 @@
 $font-primary: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
 $font-header-jumbo: 'Press Start 2P', cursive;
 
+// Important note: The `px` unit is used here because this is a short-lived project.
+// On a real production project, the `rem` unit should be used.
 // Font-size
 $size-text-xxs: 12px;
 $size-text-xs: 14px;
@@ -17,25 +19,20 @@ $size-text-xxl: 64px;
 // COLORS
 
 // Text
-$color-text-white: #ffffff;
-$color-text-black: #2a2a2a;
-$color-text-grey-1: #f3f3f3;
-$color-text-grey-2: #e8e8e8;
+$color-text-grey-1: #e8e8e8;
+$color-text-grey-2: #bcbcbc;
 $color-text-grey-3: #171011;
-$color-text-grey-4: #bcbcbc;
-$color-text-yellow: #ffdd99;
 $color-text-blue: #96fafa;
+$color-text-yellow: #ffdd99;
 $color-text-red: #7a1131;
 $color-text-pink: #ff5e59;
 
 // Background
-$color-background-white: #ffffff;
 $color-background-black: #000000;
-$color-background-grey-4: #797979;
-$color-background-grey-1: #212121;
-$color-background-grey-2: #1c1818;
-$color-background-grey-3: #171011;
-$color-background-grey-5: #181112;
+$color-background-grey-1: #797979;
+$color-background-grey-2: #212121;
+$color-background-grey-3: #1c1818;
+$color-background-grey-4: #181112;
 $color-background-blue: #96fafa;
 
 // LENGTHS

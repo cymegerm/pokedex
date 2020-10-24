@@ -27,6 +27,12 @@
 // layout being resized. Look at the `html` and `body` element styles in the `_base.scss` file to see
 // how they are used in conjunction with the `respond` mixin below to achieve the desired result.
 
+// Important note: On this short-lived project, the `em` unit was used throughout the project
+// because the responsiveness of the layout was quickly done and it didn't do much difference to
+// use the `em` unit instead of the `rem` unit. In a real production project where the
+// responsiveness of the layout, components and elements needs to be as good as possible, it's
+// better to use the `rem` unit almost exclusively.
+
 /*
 0 - 575px:         Small screens (ex.: Phone portrait)    ** Base styles are applied here
 576px - 767px:     Medium screens (ex.: Tablet portrait)
@@ -76,7 +82,7 @@ $breakpoint argument variable options:
   border-top-left-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
   padding: 1em 1.5em 1em 2em;
-  background-color: $color-background-grey-4;
+  background-color: $color-background-grey-1;
   font-weight: 500;
   font-style: italic;
 }
@@ -85,7 +91,7 @@ $breakpoint argument variable options:
   border-top-right-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
   padding: 1em 2em 1em 0;
-  background-color: $color-background-grey-4;
+  background-color: $color-background-grey-1;
   color: $color-text-blue;
 }
 
@@ -94,7 +100,7 @@ $breakpoint argument variable options:
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
   padding: 1em 2em 0;
-  background-color: $color-background-grey-4;
+  background-color: $color-background-grey-1;
   font-weight: 500;
   font-style: italic;
 }
@@ -103,7 +109,7 @@ $breakpoint argument variable options:
   display: inline-flex;
   border-radius: 0 0.5em 0.5em 0.5em;
   padding: 1em 2em;
-  background-color: $color-background-grey-4;
+  background-color: $color-background-grey-1;
 }
 
 // BUTTON BASE STYLES

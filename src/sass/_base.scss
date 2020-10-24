@@ -12,8 +12,14 @@
   box-sizing: inherit; // All elements will inherit this property from the <body>
 }
 
-// This approach allows all of the sizing in the design to be based on the rem unit.
+// This approach allows all of the sizing in the design to be based on the `rem` unit.
 // It also ensures that the design is not broken when the browser font size is set to a custom value.
+
+// Important note: On this short-lived project, the `em` unit was used throughout the project
+// because the responsiveness of the layout was quickly done and it didn't do much difference to
+// use the `em` unit instead of the `rem` unit. In a real production project where the
+// responsiveness of the layout, components and elements needs to be as good as possible, it's
+// better to use the `rem` unit almost exclusively.
 
 // ** This defines what 1rem is **
 html {
@@ -45,12 +51,13 @@ body {
   box-sizing: border-box;
   font-family: $font-primary;
   // This sets 1rem for the entire design when the viewport width is 1200px and up
-  // and if the browser font size is not set to a custom value.
+  // and if the browser font size is not set to a custom value. All other font-size
+  // definitions should use a relative unit (`rem` or `em`).
   font-size: 16px;
   font-weight: 400;
   line-height: 1.7;
-  color: $color-text-grey-2;
-  background-color: $color-background-grey-1;
+  color: $color-text-grey-1;
+  background-color: $color-background-grey-2;
 }
 
 h1 {
