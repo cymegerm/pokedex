@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 import { api_base_url } from '../../../../server/api-base-url';
 import { Pokemon } from '@app/api/models';
 
@@ -7,7 +9,15 @@ import { Pokemon } from '@app/api/models';
   providedIn: 'root',
 })
 export class PokemonDetailService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
+
+  logAndRedirectOnHttpError(error) {
+    if (error.ok == false && error.name == 'HttpErrorResponse') {
+      return this.router.navigateByUrl('/page-not-found');
+    } else {
+      return console.log(error);
+    }
+  }
 
   recursiveObjectSearch(obj, searchKey: string, results: string[] = []) {
     const r = results;
@@ -33,7 +43,7 @@ export class PokemonDetailService {
 
       return this.http.get(`${evolution_chain_url}`).toPromise();
     } catch (error) {
-      console.error(error);
+      this.logAndRedirectOnHttpError(error);
     }
   }
 
@@ -61,7 +71,7 @@ export class PokemonDetailService {
       });
       return pokemon;
     } catch (error) {
-      console.error(error);
+      this.logAndRedirectOnHttpError(error);
     }
   }
 }
