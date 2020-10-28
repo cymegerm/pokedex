@@ -28,17 +28,19 @@ export class PokemonListResolver implements Resolve<any> {
       map((params) => {
         const maxLength = 150;
         let cached = false;
-        let offset;
-        let limit;
+        let offset: number;
+        let limit: number;
 
-        params.offset ? (offset = +params.offset) : (offset = 0);
-        params.limit ? (limit = +params.limit) : (limit = 10);
+        const numbers = /^[0-9]+$/;
 
-        if (offset > maxLength - limit || limit > maxLength || offset > this.pokemonListItems) {
+        params.offset && params.offset.match(numbers) ? (offset = +params.offset) : (offset = 0);
+        params.limit && params.limit.match(numbers) ? (limit = +params.limit) : (limit = 10);
+
+        if (offset > maxLength - limit || limit > maxLength || offset > this.pokemonListItems.length) {
           this.router.navigateByUrl('/pokedex');
         }
 
-        if (this.pokemonListItems.indexOf(offset) && offset + limit <= this.pokemonListItems.length) {
+        if (offset + limit <= this.pokemonListItems.length) {
           cached = true;
         }
 
