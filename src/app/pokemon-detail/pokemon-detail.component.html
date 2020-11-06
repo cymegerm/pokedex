@@ -2,6 +2,14 @@
   <ng-template #loading><pok-loader></pok-loader></ng-template>
   <div *ngIf="pokemonDetailRetrieved$ | async; else loading">
     <div class="pokemondetail-PokemonDetail_Card" *ngIf="pokemonDetail$ | async as pokemon">
+      <div class="pokemondetail-PokemonDetail_ArrowAnchorContainer">
+        <a href="#" routerLink="/pokedex" class="pokemondetail-PokemonDetail_ArrowAnchor">
+          <div class="pokemondetail-PokemonDetail_ArrowContainer">
+            <span class="pokemondetail-PokemonDetail_Arrow">&#8672;</span>
+            <span class="pokemondetail-PokemonDetail_ArrowText">Back</span>
+          </div>
+        </a>
+      </div>
       <div class="pokemondetail-PokemonDetail_ImageContainer">
         <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }} image" class="pokemondetail-PokemonDetail_Image" />
       </div>
