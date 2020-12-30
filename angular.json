@@ -36,7 +36,8 @@
             "styles": [
               {
                 "input": "src/sass/global-styles.scss",
-                "bundleName": "styles"
+                "bundleName": "styles",
+                "inject": true
               }
             ],
             "stylePreprocessorOptions": {
@@ -55,7 +56,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
