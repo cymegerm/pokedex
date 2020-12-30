@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --configuration=development --proxy-config ./proxy.conf.json",
+    "start": "ng serve --configuration=development --hmr --proxy-config ./proxy.conf.json",
     "server": "ts-node -P ./server/server.tsconfig.json ./server/server.ts",
     "build": "ng build",
     "test": "tsc -p src/tsconfig.spec.json && jest --coverage",
